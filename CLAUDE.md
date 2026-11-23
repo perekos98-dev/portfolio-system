@@ -26,7 +26,7 @@
 
 # Компоненти
 
-Заповнимо далі.
+- `Button` (`src/components/Button.tsx`): кнопка. Варіанти `primary` (на `accent`, текст `canvas`, 5,6:1) і `secondary` (межа `ink-muted`); розміри `md` і `lg`; стани default, hover, focus, disabled. Вимкнена через `aria-disabled`, пояснення під нею — проп `disabledReason` (зв'язане через `aria-describedby`). Історія `Components/Button`, docs у `Button.mdx`.
 
 # Правила
 
