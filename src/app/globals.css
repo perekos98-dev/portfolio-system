@@ -1,3 +1,55 @@
 @import "tailwindcss";
 
-/* Design tokens (colors, typography, spacing) will be defined here in the next step. */
+/*
+ * Design tokens. Names describe the role, not the value.
+ * Each namespace first resets Tailwind's defaults, so only these tokens exist.
+ * Spacing is not declared here: we use only the Tailwind steps
+ * 2, 3, 4, 6, 8 (= 8, 12, 16, 24, 32 px), e.g. p-4.
+ */
+@theme {
+  /* Colors */
+  --color-*: initial;
+  --color-canvas: #ffffff;
+  --color-surface: #f5f6fa;
+  --color-line: #e3e5eb;
+  --color-accent: #484cff;
+  --color-accent-soft: #e4e4ff;
+  --color-ink: #151a24;
+  --color-ink-muted: #526078;
+  --color-danger: #c62828;
+
+  /* Fonts (Inter is loaded with next/font in fonts.ts) */
+  --font-sans:
+    var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+
+  /* Text sizes: size, with line height / letter spacing / weight where set */
+  --text-*: initial;
+  --text-caption: 16px;
+  --text-caption--line-height: 1.4;
+  --text-body: 18px;
+  --text-body--line-height: 1.6;
+  --text-button: 20px;
+  --text-button--line-height: 1.2;
+  --text-button--font-weight: 600;
+  --text-lead: 24px;
+  --text-lead--line-height: 1.375;
+  --text-heading: 48px;
+  --text-heading--line-height: 1.15;
+  --text-display: 100px;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 700;
+
+  /* Radii */
+  --radius-*: initial;
+  --radius-control: 9999px; /* buttons and fields */
+  --radius-card: 16px; /* cards */
+
+  /* Image aspect ratios (Tailwind's defaults are kept) */
+  --aspect-hero: 1 / 1;
+  --aspect-cover: 4 / 3;
+
+  /* Page layout: for pages only, not for components */
+  --container-page: 1280px; /* max-w-page */
+  --spacing-section: 160px; /* py-section, gap-section, ... */
+}
