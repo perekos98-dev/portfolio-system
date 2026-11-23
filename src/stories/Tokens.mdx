@@ -1,0 +1,107 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Tokens" />
+
+<div className="sb-unstyled font-sans text-ink">
+
+<h1 className="mb-4 font-sans text-heading text-ink">Токени</h1>
+
+<p className="mb-8 font-sans text-body text-ink-muted">Усі значення беруться зі змінних @theme у globals.css. Тут вони не вписані вручну.</p>
+
+<section className="mb-8">
+
+<h2 className="mb-4 font-sans text-lead font-semibold text-ink">Кольори</h2>
+
+<ColorPalette>
+  <ColorItem
+    title="Поверхні"
+    subtitle="canvas, surface, line"
+    colors={{
+      canvas: 'var(--color-canvas)',
+      surface: 'var(--color-surface)',
+      line: 'var(--color-line)',
+    }}
+  />
+  <ColorItem
+    title="Акцент"
+    subtitle="accent, accent-soft"
+    colors={{
+      accent: 'var(--color-accent)',
+      'accent-soft': 'var(--color-accent-soft)',
+    }}
+  />
+  <ColorItem
+    title="Текст"
+    subtitle="ink, ink-muted"
+    colors={{
+      ink: 'var(--color-ink)',
+      'ink-muted': 'var(--color-ink-muted)',
+    }}
+  />
+  <ColorItem
+    title="Помилка"
+    subtitle="danger"
+    colors={{ danger: 'var(--color-danger)' }}
+  />
+</ColorPalette>
+
+</section>
+
+<section className="mb-8">
+
+<h2 className="mb-4 font-sans text-lead font-semibold text-ink">Шрифт</h2>
+
+<p className="font-sans text-lead">font-sans: Inter. Прізвище, Ґанок, Єдність, їжак — кирилиця теж Inter.</p>
+
+</section>
+
+<section className="mb-8">
+
+<h2 className="mb-4 font-sans text-lead font-semibold text-ink">Розміри тексту</h2>
+
+<div className="flex flex-col gap-6">
+  <div><span className="font-sans text-caption text-ink-muted">text-caption</span><p className="font-sans text-caption">Швидка руда лисиця стрибає через ліниву собаку</p></div>
+  <div><span className="font-sans text-caption text-ink-muted">text-body</span><p className="font-sans text-body">Швидка руда лисиця стрибає через ліниву собаку</p></div>
+  <div><span className="font-sans text-caption text-ink-muted">text-button</span><p className="font-sans text-button">Швидка руда лисиця стрибає через ліниву собаку</p></div>
+  <div><span className="font-sans text-caption text-ink-muted">text-lead</span><p className="font-sans text-lead">Швидка руда лисиця стрибає через ліниву собаку</p></div>
+  <div><span className="font-sans text-caption text-ink-muted">text-heading</span><p className="font-sans text-heading">Швидка руда лисиця</p></div>
+  <div><span className="font-sans text-caption text-ink-muted">text-display</span><p className="font-sans text-display">Дизайн</p></div>
+</div>
+
+</section>
+
+<section className="mb-8">
+
+<h2 className="mb-4 font-sans text-lead font-semibold text-ink">Радіуси</h2>
+
+<div className="flex flex-wrap items-center gap-6">
+  <div className="flex flex-col gap-2">
+    <div className="flex h-24 w-48 items-center justify-center border border-ink-muted bg-surface font-sans text-caption rounded-control">Кнопка</div>
+    <span className="font-sans text-caption text-ink-muted">rounded-control</span>
+  </div>
+  <div className="flex flex-col gap-2">
+    <div className="flex h-24 w-48 items-center justify-center border border-line bg-surface font-sans text-caption rounded-card">Картка</div>
+    <span className="font-sans text-caption text-ink-muted">rounded-card</span>
+  </div>
+</div>
+
+</section>
+
+<section className="mb-8">
+
+<h2 className="mb-4 font-sans text-lead font-semibold text-ink">Пропорції картинок</h2>
+
+<div className="flex flex-wrap items-end gap-6">
+  <div className="flex flex-col gap-2">
+    <div className="aspect-hero w-48 bg-accent-soft rounded-card" />
+    <span className="font-sans text-caption text-ink-muted">aspect-hero</span>
+  </div>
+  <div className="flex flex-col gap-2">
+    <div className="aspect-cover w-48 bg-accent-soft rounded-card" />
+    <span className="font-sans text-caption text-ink-muted">aspect-cover</span>
+  </div>
+</div>
+
+</section>
+
+</div>
