@@ -28,6 +28,7 @@
 
 - `Button` (`src/components/Button.tsx`): кнопка. Варіанти `primary` (на `accent`, текст `canvas`, 5,6:1) і `secondary` (межа `ink-muted`); розміри `md` і `lg`; стани default, hover, focus, disabled. Вимкнена через `aria-disabled`, пояснення під нею — проп `disabledReason` (зв'язане через `aria-describedby`). Історія `Components/Button`, docs у `Button.mdx`.
 - `FormField` (`src/components/FormField.tsx`): текстове поле з підписом над ним (`label`). Типи `text`, `email`, `tel`; межа `ink-muted`, кути `rounded-control`; стани default, hover, focus, заповнене, помилка і disabled. Помилка — проп `error` (текст під полем кольору `danger`, іконка, межа `danger`, зв'язано через `aria-describedby`). Історія `Components/FormField`, docs у `FormField.mdx`.
+- `Navigation` (`src/components/Navigation.tsx`): навігація, пункти меню сайту (`items` з `label` і `href`, активний пункт — проп `active` з `href`). Стани пункту: default, hover, focus (контур `ink`), активний (`accent`, `aria-current="page"`). Від 768 px пункти в рядок; на вужчому екрані меню згорнуте в кнопку «Меню», відкрите меню лежить поверх контенту й закривається клавішею Escape. Історія `Components/Navigation`, docs у `Navigation.mdx`.
 
 # Правила
 
