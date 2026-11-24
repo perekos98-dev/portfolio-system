@@ -30,7 +30,7 @@ export default function Home() {
             href="#top"
             className="origin-left justify-self-start rounded-control text-lead font-semibold text-ink outline-offset-2 focus-visible:outline-2 focus-visible:outline-ink motion-safe:transition-transform motion-safe:hover:scale-105"
           >
-            .perekos <span className="tracking-tighter">T.</span>
+            .perekos <span className="tracking-logo">T.</span>
           </a>
           <div className="md:justify-self-center">
             <Navigation

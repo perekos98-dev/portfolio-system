@@ -54,4 +54,5 @@
   --spacing-section: 160px; /* py-section, gap-section, ... */
   --container-figure: 52.5%; /* w-figure: width of the hero figure box */
   --container-lead: 28rem; /* max-w-lead: width of the lead paragraph */
+  --tracking-logo: -0.1em; /* tracking-logo: tightens "T." in the logo */
 }
