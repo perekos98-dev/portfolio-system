@@ -1,0 +1,57 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as FormFieldStories from "./FormField.stories";
+
+<Meta of={FormFieldStories} />
+
+# FormField (поле форми)
+
+Текстове поле з підписом: імʼя, пошта, телефон у формі зв'язку. Підпис завжди стоїть над полем. Стани: default, hover, focus, заповнене, помилка і disabled.
+
+<Canvas of={FormFieldStories.Playground} />
+
+<Controls of={FormFieldStories.Playground} />
+
+## Параметри
+
+- `label`: підпис над полем. Обов'язковий.
+- `defaultValue`: початкове значення. Непорожнє значення дає стан «заповнене».
+- `placeholder`: підказка всередині порожнього поля. За замовчуванням порожня.
+- `error`: текст помилки. Якщо задано, поле в стані помилки. За замовчуванням не задано.
+- `disabled`: `true` або `false`. За замовчуванням `false`.
+- `type`: `text`, `email` або `tel`. За замовчуванням `text`.
+- Інші атрибути: усі стандартні атрибути `input` (`name`, `value`, `onChange`, `required`, `aria-*`).
+
+## Варіанти і стани
+
+- **default**: межа `ink-muted` (контраст не менше 3:1), фон `canvas`, текст `ink`.
+- **hover**: межа стає `ink`.
+- **focus** (клавіша Tab або клік): чіткий контур кольору `ink` з відступом від поля, видно на сторінці й на полі (контраст не менше 3:1).
+- **заповнене**: у полі є значення, межа `ink`, текст `ink`. Перемикається в Controls через `defaultValue`.
+- **помилка**: межа `danger`, під полем іконка й текст помилки кольору `danger`. Поле має `aria-invalid`, текст зв'язаний з ним через `aria-describedby`. Сенс не тільки в кольорі: є іконка й текст.
+- **disabled**: підкладка `surface`, текст `ink-muted`, межа збігається з підкладкою, курсор «заборонено». Помилка у вимкненому полі не показується.
+
+## Токени
+
+- Кольори: `canvas`, `surface`, `ink`, `ink-muted`, `danger`.
+- Шрифт: `font-sans`. Розміри тексту: `text-body` (поле), `text-caption` (підпис і помилка). Підпис жирний `font-semibold`.
+- Радіус: `rounded-control`.
+- Відступи: `px-6 py-3` у полі, `gap-2` між підписом, полем і помилкою та між іконкою й текстом помилки.
+
+## Коли використовувати
+
+- У формах, де користувач вводить короткий текст: імʼя, пошта, телефон.
+- Підпис пиши завжди: підказка всередині поля підпис не замінює.
+- Помилку формулюй як підказку, що виправити («Введіть пошту у форматі name@mail.com»).
+- Для довгого тексту (повідомлення) потрібне окреме багаторядкове поле, цей компонент для нього не підходить.
+
+## Як брати в код
+
+```tsx
+import { FormField } from "@/components/FormField";
+
+<FormField label="Імʼя" name="name" />
+
+<FormField label="Пошта" type="email" defaultValue="anna@mail" error="Введіть пошту у форматі name@mail.com" />
+
+<FormField label="Телефон" type="tel" disabled />
+```
