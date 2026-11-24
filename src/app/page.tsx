@@ -28,7 +28,7 @@ export default function Home() {
         <header className="relative flex flex-wrap items-center justify-between gap-2 py-4 md:grid md:grid-cols-3 md:gap-4 md:py-6">
           <a
             href="#top"
-            className="-mx-4 -my-2 rounded-control px-4 py-2 text-lead font-semibold text-ink outline-offset-2 hover:bg-accent-soft focus-visible:outline-2 focus-visible:outline-ink"
+            className="origin-left justify-self-start rounded-control text-lead font-semibold text-ink outline-offset-2 focus-visible:outline-2 focus-visible:outline-ink motion-safe:transition-transform motion-safe:hover:scale-105"
           >
             .perekos T.
           </a>

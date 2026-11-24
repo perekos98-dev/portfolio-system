@@ -35,6 +35,7 @@
 # Правила
 
 - Жирність (`font-normal`, `font-semibold`, `font-bold`) і товщини ліній (`border-2`, `outline-2`, `outline-offset-2`, `underline-offset-4`) прийняті як стандартні класи Tailwind. Окремих токенів для них не створюємо, у коді їх не змінюємо.
+- `scale` і `transition` для hover прийняті як стандартні класи Tailwind, поряд із жирністю й товщинами (напр. `motion-safe:hover:scale-105`, `motion-safe:transition-transform`). Анімацію вмикаємо лише через `motion-safe`.
 
 Заповнимо далі.
 
