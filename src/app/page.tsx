@@ -23,8 +23,26 @@ export default function Home() {
     <div className="relative isolate overflow-x-clip">
       <main
         id="top"
-        className="mx-auto flex min-h-screen w-full max-w-page flex-col px-4 md:px-8"
+        className="mx-auto flex min-h-screen w-full max-w-page flex-col px-4 md:px-8 lg:justify-center"
       >
+        {/* From 768 px: the original image, pinned to the right edge of the screen.
+            From 1024 px it has no `top`: main is a centring flex column there, so the figure sits at its
+            static position, the vertical centre of main. The visible part of the picture is a little
+            smaller than its box and the buttons sit on the baseline of the heading, so a small shift
+            (mb-6 / mb-8 and a fraction of the figure's own height) centres the visible figure exactly
+            between the language switcher and the buttons. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none hidden aspect-hero md:absolute md:-right-8 md:top-6 md:-z-10 md:block md:w-figure lg:top-auto lg:mb-6 lg:-translate-y-1/120 xl:mb-8"
+        >
+          <Image
+            src={orbits}
+            alt=""
+            fill
+            sizes="53vw"
+            className="object-contain"
+          />
+        </div>
         <header className="relative flex flex-wrap items-center justify-between gap-2 py-4 md:grid md:grid-cols-3 md:gap-4 md:py-6">
           <a
             href="#top"
@@ -71,27 +89,22 @@ export default function Home() {
             />
           </div>
 
-          {/* From 768 px: the original image, pinned to the right edge of the screen. */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none hidden aspect-hero md:absolute md:-right-8 md:top-6 lg:top-0 md:-z-10 md:block md:w-figure"
-          >
-            <Image
-              src={orbits}
-              alt=""
-              fill
-              sizes="53vw"
-              className="object-contain"
-            />
-          </div>
-
-          <div className="relative z-10 flex flex-wrap items-end justify-between gap-4 md:gap-8">
-            <h1 className="text-heading max-md:font-semibold md:font-bold xl:text-display">
+          {/* From 1024 px: a two-row grid. The heading spans both rows, so each row is exactly one
+              line of the heading, and the buttons sit in the second row, on the baseline of its last line. */}
+          <div className="relative z-10 flex flex-wrap items-end justify-between gap-4 md:gap-8 lg:grid lg:grid-flow-col lg:grid-rows-2 lg:items-stretch lg:gap-y-0">
+            <h1 className="text-heading max-md:font-semibold md:font-bold lg:row-span-2 lg:self-baseline-last xl:text-display">
               WEB &amp; MOBILE
               <br />
               <span className="text-accent">UI/UX</span> DESIGNER.
             </h1>
-            <HeroActions />
+            {/* The inner box is inline-block with overflow hidden, so its baseline is its bottom edge:
+                the grid then puts the bottom of the buttons on the baseline of the heading letters.
+                p-2 with -m-2 keeps room for the focus outline and the hover scale. */}
+            <div className="lg:row-start-2 lg:self-baseline-last lg:leading-0">
+              <div className="lg:-m-2 lg:inline-block lg:overflow-hidden lg:p-2">
+                <HeroActions />
+              </div>
+            </div>
           </div>
         </section>
       </main>
