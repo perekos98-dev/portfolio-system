@@ -25,7 +25,7 @@ type NavigationProps = {
 
 // On narrow screens a link is a full-width row (py-4, no rounding); from 768 px it is a pill.
 const linkBase =
-  "block rounded-none px-4 py-4 font-sans text-lead outline-offset-2 max-md:-outline-offset-2 " +
+  "block px-4 py-4 font-sans text-lead outline-offset-2 max-md:-outline-offset-2 " +
   "md:rounded-control md:py-2 focus-visible:outline-2 focus-visible:outline-ink";
 
 const linkDefault = "text-ink hover:bg-accent-soft";
