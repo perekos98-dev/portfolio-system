@@ -52,4 +52,6 @@
   /* Page layout: for pages only, not for components */
   --container-page: 1280px; /* max-w-page */
   --spacing-section: 160px; /* py-section, gap-section, ... */
+  --container-figure: 52.5%; /* w-figure: width of the hero figure box */
+  --container-lead: 28rem; /* max-w-lead: width of the lead paragraph */
 }

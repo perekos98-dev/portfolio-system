@@ -1,0 +1,54 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as LanguageSwitcherStories from "./LanguageSwitcher.stories";
+
+<Meta of={LanguageSwitcherStories} />
+
+# LanguageSwitcher (перемикач мов)
+
+Невеликий ряд кнопок, у якому вибрана рівно одна мова сайту. Є стани default, hover, focus і вибрана мова.
+
+<Canvas of={LanguageSwitcherStories.Playground} />
+
+<Controls of={LanguageSwitcherStories.Playground} />
+
+## Параметри
+
+- `languages`: список мов, кожна має `code` (код, наприклад `en`) і `label` (текст кнопки, наприклад `EN`). Обов'язковий.
+- `defaultValue`: код мови, вибраної на початку. За замовчуванням вибрана перша мова зі списку.
+- `onChange`: функція, яку викликають з кодом мови після вибору іншої. За замовчуванням не задано.
+- `label`: підпис групи для скрінрідерів. За замовчуванням «Language».
+
+## Варіанти і стани
+
+- **default** (невибрана мова): текст `ink-muted`, звичайна жирність, без підкладки.
+- **hover**: підкладка `accent-soft`, текст `ink`.
+- **focus** (клавіша Tab): чіткий контур кольору `ink` з відступом від кнопки.
+- **вибрана мова**: підкладка `accent`, текст `canvas` (достатній контраст для читання), жирність 600, на кнопці стоїть `aria-pressed="true"`. При наведенні підкладка темнішає до `ink`.
+- Вибір запам'ятовується всередині компонента. Куди веде вибір (інша адреса чи інший текст), вирішує сторінка через `onChange`.
+
+## Токени
+
+- Кольори: `accent`, `accent-soft`, `canvas`, `ink`, `ink-muted`.
+- Шрифт: `font-sans`. Розмір тексту: `text-button`.
+- Радіус: `rounded-control`.
+- Відступи: кнопка `px-4 py-2`, проміжок між кнопками `gap-2`.
+
+## Коли використовувати
+
+- Одним перемикачем у шапці сайту, коли є кілька мовних версій.
+- Мов має бути небагато (дві-чотири), підписи короткі (код мови).
+- Не для переходу між розділами сторінки: для цього є `Navigation`.
+
+## Як брати в код
+
+```tsx
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+
+const languages = [
+  { code: "en", label: "EN" },
+  { code: "uk", label: "UA" },
+  { code: "es", label: "ES" },
+];
+
+<LanguageSwitcher languages={languages} defaultValue="en" />
+```

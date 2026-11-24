@@ -11,6 +11,14 @@ const items = [
 const meta = {
   title: "Components/Navigation",
   component: Navigation,
+  // Відкрите меню позиціонується від найближчого батька з position: relative.
+  decorators: [
+    (Story) => (
+      <div className="relative">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     // У docs меню показується в рамці з висотою, щоб відкрите меню не обрізалось.
     docs: { story: { inline: false, iframeHeight: 360 } },
@@ -30,11 +38,15 @@ const meta = {
     },
     items: { control: false },
     label: { control: "text" },
+    menuLabel: { control: "text" },
+    closeLabel: { control: "text" },
   },
   args: {
     items,
     active: "#projects",
     label: "Основна навігація",
+    menuLabel: "Меню",
+    closeLabel: "Закрити",
   },
 } satisfies Meta<typeof Navigation>;
 

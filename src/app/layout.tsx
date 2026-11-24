@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="uk" className={inter.variable}>
+    <html lang="en" className={inter.variable}>
       <body className="bg-canvas font-sans text-ink">{children}</body>
     </html>
   );

@@ -5,7 +5,7 @@ const meta = {
   title: "Components/Button",
   component: Button,
   argTypes: {
-    variant: { control: "select", options: ["primary", "secondary"] },
+    variant: { control: "select", options: ["primary", "secondary", "soft"] },
     size: { control: "select", options: ["md", "lg"] },
     disabled: { control: "boolean" },
     disabledReason: { control: "text" },

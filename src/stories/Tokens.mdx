@@ -6,7 +6,7 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
 
 <h1 className="mb-4 font-sans text-heading text-ink">Токени</h1>
 
-<p className="mb-8 font-sans text-body text-ink-muted">Усі значення беруться зі змінних @theme у globals.css. Тут вони не вписані вручну.</p>
+<p className="mb-8 font-sans text-body text-ink-muted">Усі значення беруться зі змінних @theme у globals.css. Тут вони не вписані вручну. Жирність (`font-normal`, `font-semibold`, `font-bold`) і товщини ліній (`border-2`, `outline-2`, `outline-offset-2`, `underline-offset-4`) беруться зі стандартних класів Tailwind і окремих токенів не мають.</p>
 
 <section className="mb-8">
 
@@ -76,11 +76,11 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
 
 <div className="flex flex-wrap items-center gap-6">
   <div className="flex flex-col gap-2">
-    <div className="flex h-24 w-48 items-center justify-center border border-ink-muted bg-surface font-sans text-caption rounded-control">Кнопка</div>
+    <div className="flex w-full items-center justify-center px-8 py-8 border border-ink-muted bg-surface font-sans text-caption rounded-control">Кнопка</div>
     <span className="font-sans text-caption text-ink-muted">rounded-control</span>
   </div>
   <div className="flex flex-col gap-2">
-    <div className="flex h-24 w-48 items-center justify-center border border-line bg-surface font-sans text-caption rounded-card">Картка</div>
+    <div className="flex w-full items-center justify-center px-8 py-8 border border-line bg-surface font-sans text-caption rounded-card">Картка</div>
     <span className="font-sans text-caption text-ink-muted">rounded-card</span>
   </div>
 </div>
@@ -93,13 +93,24 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
 
 <div className="flex flex-wrap items-end gap-6">
   <div className="flex flex-col gap-2">
-    <div className="aspect-hero w-48 bg-accent-soft rounded-card" />
+    <div className="aspect-hero w-full bg-accent-soft rounded-card" />
     <span className="font-sans text-caption text-ink-muted">aspect-hero</span>
   </div>
   <div className="flex flex-col gap-2">
-    <div className="aspect-cover w-48 bg-accent-soft rounded-card" />
+    <div className="aspect-cover w-full bg-accent-soft rounded-card" />
     <span className="font-sans text-caption text-ink-muted">aspect-cover</span>
   </div>
+</div>
+
+</section>
+
+<section className="mb-8">
+
+<h2 className="mb-4 font-sans text-lead font-semibold text-ink">Розкладка сторінки</h2>
+
+<div className="flex flex-col gap-6">
+  <div><span className="font-sans text-caption text-ink-muted">--container-figure (w-figure)</span><p className="font-sans text-body">Ширина блоку 3D-фігури на першому екрані. Лише для сторінок, не для компонентів.</p></div>
+  <div><span className="font-sans text-caption text-ink-muted">--container-lead (max-w-lead)</span><p className="font-sans text-body">Найбільша ширина вступного абзацу на першому екрані. Лише для сторінок, не для компонентів.</p></div>
 </div>
 
 </section>

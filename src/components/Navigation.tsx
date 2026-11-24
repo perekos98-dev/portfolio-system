@@ -17,19 +17,27 @@ type NavigationProps = {
   active?: string;
   /** Підпис навігації для скрінрідерів. */
   label?: string;
+  /** Текст кнопки на вузькому екрані, коли меню закрите. */
+  menuLabel?: string;
+  /** Текст кнопки на вузькому екрані, коли меню відкрите. */
+  closeLabel?: string;
 };
 
+// On narrow screens a link is a full-width row (py-4, no rounding); from 768 px it is a pill.
 const linkBase =
-  "block rounded-control px-4 py-2 font-sans text-button outline-offset-2 " +
-  "focus-visible:outline-2 focus-visible:outline-ink";
+  "block rounded-none px-4 py-4 font-sans text-lead outline-offset-2 max-md:-outline-offset-2 " +
+  "md:rounded-control md:py-2 focus-visible:outline-2 focus-visible:outline-ink";
 
-const linkDefault = "text-ink-muted hover:bg-accent-soft hover:text-ink";
-const linkActive = "bg-accent text-canvas hover:bg-ink";
+const linkDefault = "text-ink hover:bg-accent-soft";
+const linkActive =
+  "text-accent underline underline-offset-4 hover:bg-accent-soft";
 
 export function Navigation({
   items,
   active,
   label = "Основна навігація",
+  menuLabel = "Меню",
+  closeLabel = "Закрити",
 }: NavigationProps) {
   const [open, setOpen] = useState(false);
   const menuId = useId();
@@ -48,7 +56,7 @@ export function Navigation({
   }, [open]);
 
   return (
-    <nav aria-label={label} className="relative font-sans">
+    <nav aria-label={label} className="font-sans">
       <div ref={toggleRef} className="md:hidden">
         <Button
           variant="secondary"
@@ -56,13 +64,13 @@ export function Navigation({
           aria-controls={menuId}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? "Закрити" : "Меню"}
+          {open ? closeLabel : menuLabel}
         </Button>
       </div>
 
       <ul
         id={menuId}
-        className={`${open ? "flex" : "hidden"} flex-col gap-2 md:flex md:flex-row max-md:absolute max-md:inset-x-0 max-md:top-full max-md:z-10 max-md:mt-2 max-md:rounded-card max-md:border max-md:border-line max-md:bg-canvas max-md:p-4`}
+        className={`${open ? "flex" : "hidden"} flex-col md:flex md:flex-row md:gap-2 max-md:absolute max-md:inset-x-0 max-md:top-full max-md:z-20 max-md:mt-2 max-md:divide-y max-md:divide-line max-md:overflow-hidden max-md:rounded-card max-md:border max-md:border-line max-md:bg-canvas`}
       >
         {items.map((item) => {
           const isActive = item.href === active;

@@ -1,8 +1,8 @@
 import { useId, type ButtonHTMLAttributes } from "react";
 
 type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disabled"> & {
-  /** Вигляд кнопки: `primary` — на кольорі accent, `secondary` — без заливки, з межею. */
-  variant?: "primary" | "secondary";
+  /** Вигляд кнопки: `primary` — на кольорі accent, `secondary` — без заливки, з межею, `soft` — на світлій підкладці accent-soft. */
+  variant?: "primary" | "secondary" | "soft";
   /** Розмір: `md` — звичайний, `lg` — великий. */
   size?: "md" | "lg";
   /** Вимкнена кнопка. Лишається у фокусі (aria-disabled), клік не спрацьовує. */
@@ -23,7 +23,8 @@ const sizes = {
 const variants = {
   primary: "border-accent bg-accent text-canvas hover:border-ink hover:bg-ink",
   secondary:
-    "border-ink-muted bg-transparent text-ink hover:bg-accent-soft",
+    "border-ink-muted text-ink hover:bg-accent-soft",
+  soft: "border-accent-soft bg-accent-soft text-ink hover:border-ink",
 };
 
 const disabledStyle =
